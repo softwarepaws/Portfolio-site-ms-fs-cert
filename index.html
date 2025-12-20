@@ -1,28 +1,49 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title>Portfolio Home</title>
-    <meta charset="utf8"/>
+<html lang="en"> 
+  <head> 
+    <title>Portfolio Home</title> 
+    <meta charset="UTF-8" /> 
+    <meta name="description" content="Linette (Lin) Mora's Personal Portfolio" /> 
+    <meta name="keywords" content="Personal, Portfolio, Linette, Mora, Software, Development, Coding" /> 
+    <meta name="author" content="Linette (Lin) Mora Bustamante" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
+    <link rel="stylesheet" href="styles.css" /> 
   </head>
   <body>
-    <header>
-    </header>
-    <main>
-      <section>
-        <h2>About Linette</h2>
-        <p>
-I’m Lin Mora, a Full Stack Software Engineer with 5+ years of experience designing and building enterprise‑grade applications. I work across the stack with Java, Spring Boot, React, Angular, SQL, and Power BI, and I enjoy turning complex requirements into clean, scalable solutions.
-</p><p>
-My experience spans backend API development, database integrations, and front end interfaces that prioritize clarity and usability. I care deeply about clean architecture, test‑driven development, and collaborative problem‑solving. I also have a strong track record of standardizing workflows and mentoring early‑career developers.
-</p><p>
-I’m excited to apply my skills to scalable systems and innovative engineering teams, contributing to projects that push technology forward and create meaningful impact.
+    <!-- Skip link for keyboard users --> <a class="skip-link" href="#main" aria-label="Skip to main content">Skip to content</a> 
+    <header role="banner"> <!-- Consider adding a visible site title or nav here --> </header> 
+    <main id="main" role="main"> 
+      <section aria-labelledby="about-heading"> 
+        <h2 id="about-heading">About Linette</h2>
+        <p>I’m Lin Mora, a Full Stack Software Engineer with 5+ years of experience designing 
+          and building enterprise‑grade applications. I work across the stack with Java, Spring Boot, 
+          React, Angular, SQL, and Power BI, and I enjoy turning complex requirements into clean, scalable 
+          solutions.
+        </p><p>
+          My experience spans backend API development, database integrations, and front end interfaces that 
+          prioritize clarity and usability. I care deeply about clean architecture, test‑driven development, 
+          and collaborative problem‑solving. I also have a strong track record of standardizing workflows and 
+          mentoring early‑career developers.
+        </p><p>
+          I’m excited to apply my skills to scalable systems and innovative engineering teams, contributing to 
+          projects that push technology forward and create meaningful impact.
         </p>
       </section>
-      <section>
-        <h2>Projects</h2>
+      <section aria-labelledby="projects-heading"> 
+        <h2 id="projects-heading">Projects</h2> 
+        <a href="projects/example-project-1.html" aria-labelledby="proj1-title" class="project-link"> 
+          <h3 id="proj1-title">Example Project 1</h3> 
+          <img src="images/project1.png" alt="Screenshot of Example Project 1 showing dashboard view" /> 
+          <p>Information about project</p>
+        </a> 
+        <a href="projects/example-project-2.html" aria-labelledby="proj2-title" class="project-link"> 
+          <h3 id="proj2-title">Example Project 2</h3> 
+          <img src="images/project2.png" alt="Example Project 2: mobile layout preview" /> 
+          <p>Information about project</p> 
+        </a> 
       </section>
-      <section>
-        <h2>Skills</h2>
+      <section aria-labelledby="skills-heading"> 
+        <h2 id="skills-heading">Skills</h2>
         <ul>
           <li>Java</li>
           <li>Spring Boot (v2 & 3)</li>
@@ -35,21 +56,22 @@ I’m excited to apply my skills to scalable systems and innovative engineering 
           <li>Scrum Methodology</li>
           <li>Power BI</li>
           <li>Python</li>
-          <li>Microsoft 365 suite (Word, Excel, PowerPoint, Outlook)</li>
+          <li>Microsoft 365 Suite (Word, Excel, PowerPoint, Outlook)</li>
           <li>Microsoft Power Automate</li>
         </ul>
       </section>
-      <form>
-        <h2>Contact</h2>
-        <label for="email">Your Email: </label>
-        <input name="email" type="email"/><br/>
-        <label for="message">Your Message</label>
-        <textarea name="message"/><br/>
-        <input type="submit"/>
+      <form aria-labelledby="contact-heading" method="post" action="/contact"> 
+        <h2 id="contact-heading">Contact</h2> 
+        <label for="email">Your Email</label> <input id="email" name="email" type="email" aria-required="true" aria-describedby="emailHelp" /> 
+        <div id="emailHelp" class="sr-only">We will only use this to reply to your message.</div> 
+        <label for="message">Your Message</label> 
+        <textarea id="message" name="message" rows="6" aria-required="true" aria-describedby="messageHelp">
+        </textarea> <div id="messageHelp" class="sr-only">Please include details about your inquiry.</div> 
+        <input type="submit" value="Send message" aria-label="Send contact message" /> 
       </form>
     </main>
-    <footer>
-
+    <footer role="contentinfo">
+      <p>&#169; Linette Mora, 2025<p>
     </footer>
   </body>
 </html>
