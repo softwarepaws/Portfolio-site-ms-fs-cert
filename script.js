@@ -1,6 +1,10 @@
 function toggleMenu() {
   const nav = document.querySelector('nav');
-  nav.classList.toggle('open');
+  if (nav.style.display === "none") {
+    nav.style.display = "block";
+  } else {
+    nav.style.display = "none";
+  }
 }
 
 function filterProjects(category) {
