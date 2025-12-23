@@ -74,14 +74,14 @@ main {
 
 header,
 footer {
-   background-color: var(--color-accent-dark);
+   background-color: var(--color-muted);
    padding: var(--space-md) 0;
    text-align: center;
 }
 
 header button.toggle-button {
    border: none;
-   background-color: var(--color-accent-dark);
+   background-color: var(--color-muted);
 }
 
 nav a {
