@@ -9,69 +9,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /> 
     <link rel="stylesheet" href="styles.css" /> 
   </head>
+
   <body>
-    <!-- Skip link for keyboard users --> <a class="skip-link" href="#main" aria-label="Skip to main content">Skip to content</a> 
-    <header role="banner"> <!-- Consider adding a visible site title or nav here --> </header> 
+    <!-- Skip link for keyboard users -->
+    <a class="skip-link" href="#main" aria-label="Skip to main content">Skip to content</a>
+
+    <header role="banner">
+      <button id="menuButton" aria-label="Toggle navigation menu">
+        ☰ Menu
+      </button>
+    </header>
+
     <main id="main" role="main"> 
+
       <section aria-labelledby="about-heading"> 
         <h2 id="about-heading">About Linette</h2>
         <p>I’m Lin Mora, a Full Stack Software Engineer with 5+ years of experience designing 
-          and building enterprise‑grade applications. I work across the stack with Java, Spring Boot, 
-          React, Angular, SQL, and Power BI, and I enjoy turning complex requirements into clean, scalable 
-          solutions.
-        </p><p>
-          My experience spans backend API development, database integrations, and front end interfaces that 
-          prioritize clarity and usability. I care deeply about clean architecture, test‑driven development, 
-          and collaborative problem‑solving. I also have a strong track record of standardizing workflows and 
-          mentoring early‑career developers.
-        </p><p>
-          I’m excited to apply my skills to scalable systems and innovative engineering teams, contributing to 
-          projects that push technology forward and create meaningful impact.
+          and building enterprise‑grade applications...
         </p>
       </section>
+
       <section aria-labelledby="projects-heading"> 
-        <h2 id="projects-heading">Projects</h2> 
-        <a href="projects/example-project-1.html" aria-labelledby="proj1-title" class="project-link"> 
+        <h2 id="projects-heading">Projects</h2>
+
+        <!-- Filter Buttons -->
+        <div class="filters">
+          <button onclick="filterProjects('all')">All</button>
+          <button onclick="filterProjects('frontend')">Frontend</button>
+          <button onclick="filterProjects('backend')">Backend</button>
+          <button onclick="filterProjects('fullstack')">Full Stack</button>
+        </div>
+
+        <a href="projects/example-project-1.html" 
+           aria-labelledby="proj1-title" 
+           class="project-link" 
+           data-category="fullstack">
           <h3 id="proj1-title">Example Project 1</h3> 
           <img src="images/project1.png" alt="Screenshot of Example Project 1 showing dashboard view" /> 
           <p>Information about project</p>
-        </a> 
-        <a href="projects/example-project-2.html" aria-labelledby="proj2-title" class="project-link"> 
+        </a>
+
+        <a href="projects/example-project-2.html" 
+           aria-labelledby="proj2-title" 
+           class="project-link" 
+           data-category="frontend">
           <h3 id="proj2-title">Example Project 2</h3> 
           <img src="images/project2.png" alt="Example Project 2: mobile layout preview" /> 
           <p>Information about project</p> 
-        </a> 
+        </a>
       </section>
+
       <section aria-labelledby="skills-heading"> 
         <h2 id="skills-heading">Skills</h2>
         <ul>
           <li>Java</li>
-          <li>Spring Boot (v2 & 3)</li>
-          <li>JPA (Java Persistence API)</li>
-          <li>JDBC (Java Database Connectivity)</li>
-          <li>REST Architecture</li>
-          <li>JavaScript</li>
-          <li>TypeScript</li>
-          <li>Angular (v12-16)</li>
-          <li>Scrum Methodology</li>
+          <li>Spring Boot</li>
+          <li>Angular</li>
           <li>Power BI</li>
-          <li>Python</li>
-          <li>Microsoft 365 Suite (Word, Excel, PowerPoint, Outlook)</li>
-          <li>Microsoft Power Automate</li>
         </ul>
       </section>
-      <form aria-labelledby="contact-heading" method="post" action="/contact"> 
+
+      <form aria-labelledby="contact-heading" method="post" action="/contact" id="contactForm"> 
         <h2 id="contact-heading">Contact</h2> 
-        <label for="email">Your Email</label> <input id="email" name="email" type="email" aria-required="true" aria-describedby="emailHelp" /> 
+
+        <label for="email">Your Email</label>
+        <input id="email" name="email" type="email" aria-required="true" aria-describedby="emailHelp" /> 
         <div id="emailHelp" class="sr-only">We will only use this to reply to your message.</div> 
-        <label for="message">Your Message</label> 
-        <textarea id="message" name="message" rows="6" aria-required="true" aria-describedby="messageHelp">
-        </textarea> <div id="messageHelp" class="sr-only">Please include details about your inquiry.</div> 
+
+        <label for="message">Your Message</label>
+        <textarea id="message" name="message" rows="6" aria-required="true" aria-describedby="messageHelp"></textarea> 
+        <div id="messageHelp" class="sr-only">Please include details about your inquiry.</div> 
+
         <input type="submit" value="Send message" aria-label="Send contact message" /> 
       </form>
     </main>
+
     <footer role="contentinfo">
       <p>&#169; Linette Mora, 2025<p>
     </footer>
+
+    <!-- JavaScript bindings -->
+    <script>
+      // Menu toggle
+      document.getElementById('menuButton').addEventListener('click', toggleMenu);
+
+      // Contact form validation
+      document.getElementById('contactForm').addEventListener('submit', function(event) {
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        if (!validateContactFormEmail(email)) {
+          alert('Please enter a valid email.');
+          event.preventDefault();
+          return;
+        }
+
+        if (!hasContactFormMessage(message)) {
+          alert('Please enter a message.');
+          event.preventDefault();
+          return;
+        }
+      });
+    </script>
+
   </body>
 </html>
