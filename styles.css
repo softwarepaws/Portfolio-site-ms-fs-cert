@@ -74,13 +74,18 @@ main {
 
 header,
 footer {
-  padding: var(--space-md) 0;
-  text-align: center;
+   background-color: var(--color-accent-dark);
+   padding: var(--space-md) 0;
+   text-align: center;
 }
 
-header {
-  background-color: var(--color-accent-dark);
-  color: white;
+header button.toggle-button {
+   border: none;
+   background-color: var(--color-accent-dark);
+}
+
+nav a {
+   color: white;
 }
 
 section {
