@@ -14,7 +14,6 @@ html {
 body {
   font-family: "Inter", Arial, sans-serif;
   line-height: 1.6;
-  padding: 1rem;
   color: #222;
   background: #fff;
 }
@@ -31,9 +30,17 @@ video {
    2. ROOT VARIABLES
 -------------------------------------------------- */
 :root {
+
+  --charcoal-brown: #1f271bff;
+  --parchment: #f1f0eaff;
+  --baltic-blue: #586994ff;
+  --lavender-grey: #7d869cff;
+  --prussian-blue: #020122ff;
+  --text-color-header: white;
+  
   --color-accent: #4a6cf7;
   --color-accent-dark: #2f4bd4;
-  --color-muted: #666;
+  --color-muted: #020122;
 
   --space-xs: 0.5rem;
   --space-sm: 1rem;
@@ -74,18 +81,17 @@ main {
 
 header,
 footer {
-   background-color: var(--color-muted);
+   background-color: var(--prussian-blue);
    padding: var(--space-md) 0;
    text-align: center;
+   color: var(--text-color-header);
 }
 
 header button.toggle-button {
+  padding: 14px 16px;
+   color: var(--text-color-header);
    border: none;
-   background-color: var(--color-muted);
-}
-
-nav a {
-   color: white;
+   background: none;
 }
 
 section {
@@ -118,15 +124,6 @@ section h2 {
 .project-link:hover,
 .project-link:focus {
   box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-
-/* Two-column layout on tablets/desktops */
-@media (min-width: 700px) {
-  .projects-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--space-md);
-  }
 }
 
 /* --------------------------------------------------
@@ -176,13 +173,30 @@ input[type="submit"]:hover {
 }
 
 /* --------------------------------------------------
-   8. RESPONSIVE TYPOGRAPHY
+   Media Queries
 -------------------------------------------------- */
+@media screen and (max-width: 600px) {
+  header nav {
+    display: none;
+  }
+
+  button#menu-button {
+    display: block;
+  }
+}
+
 @media (min-width: 600px) {
   html {
     font-size: 17px;
   }
 }
+
+@media screen and (min-width: 601px) {
+  header #menu-button {
+    display: none;
+  }
+}
+
 
 @media (min-width: 900px) {
   html {
@@ -190,32 +204,11 @@ input[type="submit"]:hover {
   }
 }
 
-/* --------------------------------------------------
-   9. UTILITIES
--------------------------------------------------- */
-.skip-link {
-  position: absolute;
-  top: -40px;
-  left: 0;
-  background: var(--color-accent);
-  color: white;
-  padding: var(--space-xs) var(--space-sm);
-  z-index: 100;
-  transition: top 0.2s ease;
+@media (min-width: 700px) {
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
 }
 
-.skip-link:focus {
-  top: 0;
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
