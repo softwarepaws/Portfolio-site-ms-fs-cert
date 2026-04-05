@@ -97,11 +97,11 @@ header button.toggle-button {
    background-color: var(--prussian-blue);
 }
 
-section {
+article {
   margin-bottom: var(--space-lg);
 }
 
-section h2 {
+article h2 {
   margin-bottom: var(--space-sm);
   border-bottom: 2px solid var(--color-accent);
   padding-bottom: var(--space-xs);

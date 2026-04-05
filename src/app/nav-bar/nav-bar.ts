@@ -26,7 +26,6 @@ export class NavBar implements OnInit {
         this.isMenuOpen.set(true)
       }
       
-      console.log("Is Mobile:", isMobile, "Menu Open:", this.isMenuOpen);
     });
   }
 
