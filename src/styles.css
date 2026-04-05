@@ -93,8 +93,8 @@ footer {
 header button.toggle-button {
   padding: 14px 16px;
    color: var(--text-color-header);
-   border: none;
-   background-color: whitesmoke;
+   border: 1px solid var(--text-color-header);
+   background-color: var(--prussian-blue);
 }
 
 section {
@@ -197,6 +197,10 @@ input[type="submit"]:hover {
   button#menu-button {
     display: block;
   }
+  header nav a {
+    display: block;
+    padding: var(--space-sm);
+  }
 }
 
 @media (min-width: 600px) {
@@ -208,6 +212,15 @@ input[type="submit"]:hover {
 @media screen and (min-width: 601px) {
   header #menu-button {
     display: none;
+  }
+
+  header nav {
+    display: block;
+  }
+  
+  header nav a {
+    display: inline-block;
+    margin: 0 var(--space-sm);
   }
 }
 

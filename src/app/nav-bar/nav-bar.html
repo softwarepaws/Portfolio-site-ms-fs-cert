@@ -1,9 +1,10 @@
 <header role="banner">
     <button id="menu-button" aria-label="Toggle navigation menu" (click)="toggleMenu()" class="toggle-button">
-        test
+        <i class="bi bi-list"></i>
     </button>
-    <nav id="nav" role="navigation" class="nav-menu" [ngClass]="isMenuOpen ? 'block' : 'hidden'">
-        <a class="active" href="#">Home</a>
-        <a href="#">Resume</a> 
+    <nav id="nav" role="navigation" [ngClass]="{'block' : isMenuOpen(), 'hidden' : !isMenuOpen()}">
+        <a routerLink="/" routerLinkActive="active">Home</a>
+        <a routerLink="resume" routerLinkActive="active">Resume</a>
+
     </nav>
 </header>
